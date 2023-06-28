@@ -1,38 +1,281 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.app-container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .app-container {
+    width: 60%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 900px) {
+  .app-container {
+    width: 70%;
+  }
+}
+
+.logoSvg {
+  height: 40px;
+  padding-top: px;
+  margin: 25px;
+}
+
+.headerContainer {
+  margin: 25px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.headerContainer h2 {
+  font-family: 'Gotham';
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.buttonSing {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  margin: 30px auto;
+  text-decoration: none;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.buttonSing button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 40px);
+  max-width: 100%;
+  height: 50px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonSing button a {
+  text-decoration: none;
+  font-family: 'Gotham';
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+}
+
+.buttonSing span {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.buttonSing img {
+  margin-right: 15px;
+}
+/**/
+.contentDivider {
+  width: 100%;
+}
+
+.formDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8e878b;
+  font-family: 'Gotham';
+  font-weight: bold;
+  font-size: 15px;
+  margin: 5%;
+  position: relative;
+}
+
+.formDivider::before,
+.formDivider::after {
+  content: "";
+  flex-grow: 1;
+  background-color: #8e878b;
+  height: 1px;
+}
+
+.formDivider::before {
+  margin-right: 10px;
+}
+
+.formDivider::after {
+  margin-left: 10px;
+}
+
+/*
+  Formulario
+*/
+
+.FormReg {
+  font-family: 'Gotham';
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 75px;
+  font-weight: 400;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleSection {
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.inputText {
+  height: 50px;
+  padding-left: 15px;
+  border-color: #cecece;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-family: 'Gotham';
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.inputPass {
+  position: relative;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  height: 50px;
+  padding-left: 15px;
+  padding-right: 40px; /* Aumenta el padding derecho para dar espacio al botón */
+  border-color: #cecece;
+  border-radius: 5px; /* Utiliza border-radius para aplicar bordes redondeados en todas las esquinas */
+  font-family: 'Gotham';
+  font-size: 15px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.errorMsg {
+  color: #d31225;
+  font-family: 'Gotham';
+  font-size: 15px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.formRef {
+  color: #467e54;
+  font-family: 'Gotham';
+  font-size: 15px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.campo2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+.dataDay, .dataMonth, .dataYear {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataDay {
+  width: 20%;
+}
+
+.dataMonth {
+  width: 40%;
+}
+
+.dataYear {
+  width: 30%;
+}
+
+.dataDay, .dataMonth {
+  margin-right: 5%;
+}
+
+select.inputText option {
+  color: #757575;
+  font-family: 'Gotham';
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.titleData {
+  margin-bottom: 10px;
+}
+
+.gender-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.gender-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gender-message {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.radio-label, .advise {
+  margin-left: 5px;
+  font-family: 'Gotham';
+  font-size: 15px;
+  font-weight: 450;
+}
+
+.advise {
+  display: flex;
+  margin: 10px 0px;
+}
+
+.advise p {
+  margin-left: 15px;
+}
+
+.useCondition {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.useCondition a {
+  color: #33bb61;
+  font-family: 'Gotham';
+}
+
+.submitButton {
+  margin: 20px auto 0px;
+  height: 60px;
+  width: 40%;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bolder;
+  border: none;
+  background-color: #1ed760;
 }
